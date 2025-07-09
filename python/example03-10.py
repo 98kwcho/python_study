@@ -1,3 +1,6 @@
-for i in range(2, 51):
-    if i % 2 == 0:
-        print(i, end=" ")
+sum = 0.0
+
+for i in range(100):
+    sum += (2*i -1) / (2*i +1)
+
+print(sum)

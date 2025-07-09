@@ -1,3 +1,6 @@
-for i in range(2, 51):
-    if i % 2 == 0:
-        print(i, end=" ")
+n = 0
+
+while n**2 < 500:
+    n+=1
+
+print(n)
