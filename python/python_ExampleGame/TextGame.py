@@ -32,20 +32,31 @@ text_Asset = random.choice(Texts)
 start_time = time.time()
 
 print(text_Asset)
-inputText = input("\n텍스트 입력 :")
 
-end_time = time.time()
-elapsed_time = end_time - start_time
+while True:
 
-correct = 0
+    inputText = input("\n텍스트 입력 :")
 
-for i in range(min(len(text_Asset), len(inputText))):
-    if text_Asset[i] == inputText[i]:
-        correct += 1
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    correct = 0
+    incorrect = 0
+
+    for i in range(min(len(text_Asset), len(inputText))):
+        if text_Asset[i] == inputText[i]:
+            correct += 1
+        else:
+            incorrect += 1
+
+    if correct == len(text_Asset):
+        break
+
 
 accuracy = correct / max(len(text_Asset),len(inputText)) * 100 
 
 #per minutec
 typeSpeed = (len(inputText) / elapsed_time ) * 60
 
-print(f"정확도 : {accuracy:.2f}% 분당 속도 : {typeSpeed:.2f}타")
+print(f"오타 횟수 : {incorrect}번")
+#print(f"정확도 : {accuracy:.2f}% 분당 속도 : {typeSpeed:.2f}타")
