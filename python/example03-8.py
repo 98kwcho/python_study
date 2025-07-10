@@ -1,11 +1,6 @@
-def fib(n):
-    a, b = 0, 1
-    for _ in range(n):
-        a, b = b, a + b 
-    return a
+n = 0
 
-inputNum = int(input("정수를 입력하시오"))
+while n**2 < 500:
+    n+=1
 
-for i in range(inputNum):
-	print(fib(i)) 
-     
+print(n)
