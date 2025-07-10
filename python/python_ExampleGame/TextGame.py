@@ -33,15 +33,13 @@ start_time = time.time()
 
 print(text_Asset)
 
+incorrect = 0
+
 while True:
 
     inputText = input("\n텍스트 입력 :")
 
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-
     correct = 0
-    incorrect = 0
 
     for i in range(min(len(text_Asset), len(inputText))):
         if text_Asset[i] == inputText[i]:
@@ -52,6 +50,8 @@ while True:
     if correct == len(text_Asset):
         break
 
+end_time = time.time()
+elapsed_time = end_time - start_time
 
 accuracy = correct / max(len(text_Asset),len(inputText)) * 100 
 
